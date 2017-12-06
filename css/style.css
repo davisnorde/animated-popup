@@ -1,0 +1,56 @@
+body {
+	margin: 0;
+	padding: 0;
+	background: #222;
+}
+
+#banner {
+	width: 400px;
+	height: 300px;
+	background: lightblue;
+	margin-left: auto;
+	margin-right: auto;
+	transform: translateY(-500px);
+	animation: drop .5s ease forwards;
+	border-radius: 3px;
+	position: relative;
+}
+
+#banner.close {
+	animation: close .5s ease forwards;
+}
+
+#close-button {
+	position: absolute;
+	color: #222;
+	font-family: Arial;
+	font-size: 20px;
+	line-height: 12px;
+	padding: 5px;
+	cursor: pointer;
+	display: inline-block;
+	border-radius: 50%;
+	left: 7;
+	top: 7;
+	transition: background .3s ease;
+}
+
+#close-button:hover {
+	background: #eee;
+}
+
+#close-button:active {
+	background: #ddd;
+}
+
+@keyframes drop {
+	0%{ opacity: 0; }
+	70%{ transform: translateY(200px); }
+	100%{ transform: translateY(150px); opacity: 1;}
+}
+
+@keyframes close {
+	0%{ transform: translateY(150px); }
+	70%{ transform: translateY(200px); }
+	100%{ transform: translateY(-500px); }
+}
